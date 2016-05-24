@@ -1,8 +1,0 @@
-  <option style="color: #16c6c2" value="All-Music">All-Music</option>
-  <option style="color: #368726" value="Christmas-Special">Christmas-Special</option>
-  <option style="color: #36c6f7" value="Closing-Time">Closing-Time</option>
-  <option style="color: #375737" value="Custom">Custom</option>
-  <option style="color: #561737" value="Easy-Going">Easy-Going</option>
-  <option style="color: #56e657" value="Energetic">Energetic</option>
-  <option style="color: #3742d5" value="St-Paddys-Day">St-Paddys-Day</option>
-  <option style="color: red" value="STOP">STOP</option>
