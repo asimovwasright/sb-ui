@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" href="../css/framework.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="theme-color" content="#173858">
+  <link href='https://fonts.googleapis.com/css?family=Fira+Sans' rel='stylesheet' type='text/css'>
+  <title>SilverBox</title>
+</head>
+<body>
+
+<nav>
+  <div id="hamburger">
+	<span>&nbsp;</span>
+	<span>&nbsp;</span>
+	<span>&nbsp;</span>
+  </div>
+  <ul>
+    <li id="buttonSettings" class="coolButton">Settings</li>
+  </ul>
+  <img src="../images/logo.png" />
+  <ul>
+    <li id="buttonShedule" class="coolButton">Schedule</li>
+  </ul>
+</nav>
+<user>
+  <ul>
+    <li>User: ProtoType</li>
+    <li>Venue: The Moon</li>
+  </ul>
+</user>
+
+<div class="box" id="frame1">
+  <div class="inbox-half"><!-- Now PLaying Container -->
+    <h1>Now Playing</h1><br/><br/>
+	<iframe scrolling="no" id="trackInfo" src="/elements/now-playing.php" >Loading...</iframe>
+  </div>
+  <div class="inbox-half"><!-- Channel Selector -->
+    <h1>Channel Override</h1><br/><br/>
+	<iframe scrolling="yes" id="moodDial" src="/elements/channel-box.php" >Loading...</iframe>
+  </div>
+</div>
+
+
+<div class="box"><!-- Schedule Box -->
+  <div class="inbox-full">
+	<h1>Schedule</h1>
+	<iframe scrolling="no" id="scheduleA" src="/elements/schedule.php" onLoad="autoResize('scheduleA');" width="100%">Your computer does not allow iFrames, sorry.</iframe><br /><br />
+  </div>
+</div>
+
+<div class="box"><!-- Jingles Box -->
+  <div class="inbox-full">
+	<h1>Jingles</h1>
+	<iframe scrolling="no" id="jingles" src="/elements/jingles.php"  onLoad="autoResize('jingles');" width="100%">Your computer does not allow iFrames, sorry.</iframe><br /><br />
+  </div>
+</div>
+
+<div class="foot-space">&nbsp;</div>
+<footer>
+<table>
+ <tr>
+  <td><div id="buttonChannel" class="coolButton">Channel</div></td>
+  <td><div  id="buttonContact" class="coolButton" >Contact</div></td>
+  <td></td>
+ </tr>
+</table>
+</footer>
+
+<script language="JavaScript">
+<!--
+function autoResize(id) // Height only...
+{
+    var newheight;
+
+    if(document.getElementById){
+        newheight = document.getElementById(id).contentWindow.document .body.scrollHeight;
+    }
+
+    document.getElementById(id).height = (newheight) + "px";
+}
+//-->
+
+
+</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

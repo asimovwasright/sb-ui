@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../graphics/css/elements.css" />
+</head>
+<body>
+
+<div onclick="reveal('shrink')" id="albumArt"><img src="../graphics/images/cover.jpg" />
+	<div id="nowPlaying">
+	<table>
+	<tr>
+	<td> <strong style="color: white; font-size: 150%">Wake Up</strong></td>
+	</tr>
+	<tr>
+	<td>  <strong style="color: #DEE0E0">Now That's What I Call Music! 92</strong></td>
+	</tr>
+	<tr>
+	<td>  <strong style="color: #DEE0E0">The Vamps</strong></td>
+	</tr>
+	</table>
+	</div>
+</div><!-- End albumArt -->

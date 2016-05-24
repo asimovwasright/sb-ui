@@ -1,0 +1,481 @@
+html,body{font-family: 'Open Sans', sans-serif;font-size:1em;line-height:1.5}
+
+* {
+  padding: 0 ;
+  margin: 0 ;
+  font-family: 'Fira Sans', sans-serif !important;
+  transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+body {
+  text-align: center;
+  -webkit-animation: softIn 1s;
+  -moz-animation:    softIn 1s;
+  -o-animation:      softIn 1s;
+  animation:         softIn 1s;
+  color: white;
+}
+
+a {text-decoration: none;}
+
+.coolButton {
+  display: inline-block;
+  margin-top: 0px;
+  background-color: transparent;
+  border-radius: 0px;
+  padding: 12px;
+  color: white;
+  width: 160px;
+  text-align: center;
+  line-height: 100%;
+  cursor: pointer;
+  z-index: 5002;
+  transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+	.coolButton:hover {
+	  color: #F5712F;
+	}
+
+#buttonSkip {
+  background: url(../images/skip.png) no-repeat center;
+  background-size:35px 35px;
+  background-position: 5px 3px;
+}
+
+	#buttonSkip:hover {
+	  background: url(../images/skip-hover.png) no-repeat center;
+	  background-size:35px 35px;
+	  background-position: 5px 3px;
+	}
+
+
+#nowPlaying {
+  border-radius: 20px;
+  background-color: rgba(50, 50, 50, .9);
+  width: 90%;
+  position: absolute;
+  left:0%;
+  margin-left: 5%;
+  bottom: 10px;
+  text-align: left !important;
+  transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
+}
+
+#nowPlaying table {
+  border-spacing: 30px;
+  margin-left: 15px;
+}
+
+#albumArt {
+  position: absolute;
+  top: 25px;
+  right: 5px;
+  width: 35%;
+  max-height: 500px;
+  text-align: center;
+  background-color: #1C181C;
+  cursor: default;
+}
+
+#albumArtSleeping {
+  position: relative;
+  /*top: 25px;
+  right: 17.5px;*/
+  width: 65%;
+  max-height: 500px;
+  text-align: center;
+  background-color: #1C181C;
+  cursor: default;
+}
+
+#albumArt img, #albumArtSleeping img {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+}
+
+#playList {
+  width:60%;
+  max-width: 800px;
+  min-width: 400px;
+}
+
+#playList table {
+  table-layout: fixed;
+  width: 100%;
+  text-align: center !important;
+}
+
+#playList table td {
+  font-size: 18px;
+  max-width: 30%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0px 30px 0px 30px;
+
+}
+
+table hr {
+  border: 0;
+  height: 1px;
+  margin: 7px 0px 7px 0px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+}
+
+#channel-dial {
+  color: white;
+}
+
+#channel-dial table {
+  cursor: pointer !important;
+  display: inline-table;
+  table-layout: fixed;
+  text-align: center !important;
+  margin: 15px;
+}
+
+#channel-dial table td {
+  height: 100px;
+  width: 200px;
+  line-height: 50px;
+  font-size: 20px;
+  background-position: 5px 5px;
+  border-radius: 15px;
+  background-size: 15px;
+  transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+	#channel-dial table td:hover {
+	  background-color: white !important;
+	  color: #F5712F;
+	}
+
+#active {
+  cursor: default !important;
+  background: url('../images/GreenLED.gif') no-repeat center center;
+}
+
+.pressed {
+  background-color: white !important;
+  color: #F5712F;
+  background: url('../images/OrangeLED.gif') no-repeat center center;
+}
+
+.noclick {
+  cursor: default !important;
+}
+
+#skipButton {
+  border: none !important;
+  position: absolute;
+  bottom: 1%;
+  right: 1%;
+  height: 60px;
+}
+
+#skipButton iframe {
+  border: none !important;
+}
+
+#schedule {
+  margin-bottom: 100px;
+  width: 98%;
+  text-align: center;
+
+}
+
+
+#currentSchedule {
+  width: 750px;
+  margin: 10px;
+  display: inline-block;
+}
+
+#openScheduleAdd {
+  display: inline-block;
+  padding: 15px;
+  width: 40%;
+  position: relative;
+  bottom: 10px;
+  font-size: 50px;
+  font-weight: normal;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 10px;
+  border: 2px solid green;
+  border-radius: 25px;
+}
+
+#openUpload {
+  display: inline-block;
+  padding: 15px;
+  margin-right: 15px;
+  width: 40%;
+  position: relative;
+  bottom: 10px;
+  font-size: 50px;
+  font-weight: normal;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 10px;
+  border: 2px solid green;
+  border-radius: 25px;
+}
+
+#popupSchedule {
+  position: absolute;
+  width: 600px;
+  top: 10px;
+  left: 10px;
+  color: #131313;
+  padding: 20px;
+  display: none;
+  background: rgba(255,255,255,1);
+  border-radius: 10px;
+}
+
+#popupUpload {
+  position: absolute;
+  width: 300px;
+  top: 50px;
+  left: 50px;
+  color: #131313;
+  padding: 20px;
+  display: none;
+  background: rgba(255,255,255,1);
+  border: thin solid #1C181C;
+  border-radius: 10px;
+}
+
+#closeScheduleAdd {
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  color: red;
+  font-size: 25px;
+  padding: 5px 15px 20px 20px;
+  cursor: pointer;
+}
+
+#schedule {
+  height: auto;
+  min-height: 500px;
+}
+
+#schedule table {
+  text-align: left;
+  width: 100%;
+}
+
+#schedule table td{
+  width: auto;
+  text-align: center;
+}
+
+#schedule table th {
+  text-align: center;
+  padding: 20px;
+}
+
+#schedule fieldset {
+  display: inline-block;
+  padding: 15px;
+  margin: 20px;
+}
+
+#schedule fieldset legend {
+  padding: 0 7px 0 7px;
+}
+
+
+#schedule select {
+  border: none !important;
+  background: none !important;
+  font-size: 30px;
+  padding: 5px;
+}
+
+#schedule #startTime, #startTime select {
+  color: green !important;
+}
+
+#channelSelectDrop {
+  border: thin solid #131313;
+  display: inline-block;
+}
+
+#channelSelectDrop select {
+  font-size: 18px !important;
+  color: #9100AB !important;
+}
+
+*:focus {
+    outline: none;
+}
+
+#scheduleDays {
+  padding: 25px;
+}
+
+.scheduleDay {
+  display: inline-block;
+  border: thin solid #821025;
+  padding: 15px;
+  margin: 10px;
+  color: #821025;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+.scheduleTick {
+  color: green;
+  display: inline-block;
+  position: absolute;
+  opacity: 0;
+  font-size:60px;
+  line-height: 20px;
+  margin-left: -15px;
+  transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#scheduleChannel {
+  color: #9100AB;
+  padding: 15px;
+}
+
+#scheduleChannel input[type=radio] {
+  width:3em;
+  height:3em;
+  vertical-align: middle;
+}
+
+#scheduleChannel label {
+  color: #9100AB;
+  font-weight: bold;
+}
+
+
+
+.scheduleButton {
+  display: inline-block;
+  margin-top: 0px;
+  background-color: transparent;
+  border-radius: 0px;
+  padding: 12px;
+  color: #9100AB;
+  width: 160px;
+  text-align: center;
+  line-height: 100%;
+  cursor: pointer;
+  z-index: 5002;
+  border: thin solid #131313 !important;
+  transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+	.scheduleButton:hover {
+	  color: green;
+	}
+
+.scheduleBlock {
+  display: inline-block;
+  padding: 0px 0 15px 0;
+  width: 70px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  cursor: default;
+  font-size: 12px;
+}
+
+.scheduleBlockDEL {
+  display: inline;
+  padding: 2px;
+  font-size: 12px;
+  margin: 5px;
+  color: white;
+  position: relative;
+  border-radius: 50%;
+  top: 0px;
+  right: 0px;
+  text-align: center;
+  cursor: pointer;
+}
+
+	.scheduleBlockDEL:hover {
+	  color: red;
+	  background-color: white;
+	}
+
+
+@media only screen and (max-width: 800px) {
+
+
+#nowPlaying table {
+  border-spacing: 30px;
+  margin-left: 15px;
+}
+
+	#albumArt {
+	  display: inline;
+	  position: relative;
+	  top: 5px;
+	  right: 0px;
+	  width: 65%;
+	}
+
+	#playList {
+	  width:100%;
+	  max-width: 800px;
+	  min-width: 200px;
+	}
+
+	#playList table td {
+	  font-size: 15px;
+	  padding: 0px 30px 0px 30px;
+	}
+
+	#skipButton {
+	  bottom: 0%;
+	  right: 0%;
+	  width: 100%;
+	  text-align: center;
+	}
+
+	#skipButton iframe {
+	  height: 50px;
+	}
+
+}
+
+
+@-webkit-keyframes softIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes softIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes softIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes softIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
