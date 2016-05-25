@@ -26,50 +26,8 @@ function changeChannel(a)
 
 <table>
  <tr>
-  <td style="background-color:#16c6c2" id="active">
-    All-Music
-  </td>
- </tr>
-</table>
-<table>
- <tr>
-  <td id="Christmas-Special" style="background-color:#368726" onclick="changeChannel('Christmas-Special');">
-    Christmas-Special
-  </td>
- </tr>
-</table>
-<table>
- <tr>
-  <td id="Closing-Time" style="background-color:#36c6f7" onclick="changeChannel('Closing-Time');">
-    Closing-Time
-  </td>
- </tr>
-</table>
-<table>
- <tr>
-  <td id="Custom" style="background-color:#375737" onclick="changeChannel('Custom');">
-    Custom
-  </td>
- </tr>
-</table>
-<table>
- <tr>
-  <td id="Easy-Going" style="background-color:#561737" onclick="changeChannel('Easy-Going');">
-    Easy-Going
-  </td>
- </tr>
-</table>
-<table>
- <tr>
-  <td id="Energetic" style="background-color:#56e657" onclick="changeChannel('Energetic');">
-    Energetic
-  </td>
- </tr>
-</table>
-<table>
- <tr>
-  <td id="St-Paddys-Day" style="background-color:#3742d5" onclick="changeChannel('St-Paddys-Day');">
-    St-Paddys-Day
+  <td id="St-Paddys-Day" style="background-color:#3742d5";">
+    No Channels Yet
   </td>
  </tr>
 </table>
