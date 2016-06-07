@@ -1,7 +1,7 @@
-/* 
+/*
 
-Much of the responsive elements provided by W3.CSS 1.81 by J.E.Refsnes. 
-Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize 
+Much of the responsive elements provided by W3.CSS 1.81 by J.E.Refsnes.
+Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize
 The rest by Base IT Systems, specifically created to make very quick, simple responsive layouts which always take one whole viewport per frame.
 
 */
@@ -22,7 +22,7 @@ mark{background:#ff0;color:#000}
 small{font-size:80%}
 sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
 sup{top:-0.5em} sub{bottom:-0.15em}
-img{border:0} svg:not(:root){overflow:hidden} 
+img{border:0} svg:not(:root){overflow:hidden}
 hr{-moz-box-sizing:content-box;box-sizing:content-box}
 pre{overflow:auto}
 code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}
@@ -51,7 +51,7 @@ a{color:inherit}
 table{border-collapse:collapse;border-spacing:0;width:100%;display:table}
 table,th,td{border:none}
 ul, li {font-size:1em; line-height:1.8em; list-style-type: none !important;}
-iframe {border: none; scroll: none; overflow:hidden; display:inline;}	
+iframe {border: none; scroll: none; overflow:hidden; display:inline;}
 
 
 * {font-family: 'Fira Sans', sans-serif !important;}
@@ -60,6 +60,56 @@ html, body {
   background-color: #272E28;
   text-align: center;
   color: white;
+}
+
+#secureLock {
+  width: 100%;
+  height: 100%;
+  position:absolute;
+  top:0;
+  left: 0;
+  background-color: rgba(0,0,0,.8);
+  z-index: 100000;
+}
+
+#secureLock #loginForm {
+  position: absolute;
+  display: inline-block;
+  left: 50%;
+  margin-left: -125px;
+  top: 50%;
+  margin-top: -60px;
+  width: 250px;
+  height: 120px;
+  background-color: white;
+  border-radius: 10px;
+  color: grey;
+  line-height: 100px;
+}
+
+#secureLock #loginForm input[type='password'] {
+  width: 100px;
+  height: 20px;
+  border: thin solid grey;
+  color: orange;
+  padding: 15px;
+}
+
+#secureLock #loginForm input:focus {
+  outline-width: 0;
+}
+
+#secureLock #loginForm input[type='submit'] {
+  position: absolute;
+  bottom: 5px;
+  width: 150px;
+  left: 50%;
+  margin-left: -75px;
+  height: 25px;
+  background: white;
+  border: thin solid grey;
+  color: grey;
+  line-height: 0px;
 }
 
 #hamburger { display: none;}
@@ -154,7 +204,7 @@ footer {
 }
 
 footer table {
-  width: 100%; 
+  width: 100%;
   text-align: center;
 }
 
@@ -252,7 +302,7 @@ h1 {
   width:100%;
   min-width: 300px;
   text-align: center;
-  vertical-align:middle;	
+  vertical-align:middle;
 }
 
 
@@ -303,7 +353,7 @@ h1 {
   display: inline-block;
   width: 100%;
   height: 100%;
-  margin: 0px; 
+  margin: 0px;
 }
 
 #dropButton {

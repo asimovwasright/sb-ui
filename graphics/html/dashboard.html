@@ -4,12 +4,13 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <link rel="stylesheet" type="text/css" href="../css/framework.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <meta name="theme-color" content="#173858">
+  <meta name="theme-color" content="#A64819">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Fira+Sans' rel='stylesheet' type='text/css'>
   <title>SilverBox</title>
 </head>
 <body>
-
+<div id="container" style="display: none;">
 <nav>
   <div id="hamburger">
 	<span>&nbsp;</span>
@@ -68,6 +69,17 @@
 </table>
 </footer>
 
+</div><!-- End of the master container -->
+<div id="secureLock">
+  <div id="loginForm">
+    <span id="data"> </span>
+    <form id="loginSubmit" onsubmit="return loginNow();" method="post">
+      PIN-CODE:
+      <input type="password" name="passCode" value="" autofocus="true" autocomplete="off" />
+      <input type="submit"  value="Login" />
+    </form>
+  </div>
+</div>
 <script language="JavaScript">
 <!--
 function autoResize(id) // Height only...
@@ -82,6 +94,24 @@ function autoResize(id) // Height only...
 }
 //-->
 
+</script>
+<script>
+function loginNow() {
+    $.ajax({type:'POST', url: '../../elements/chk.php', data:$('#loginSubmit').serialize(), success: function(response) {
+        if (response == "ok")
+        {
+          document.getElementById('secureLock').style.display = 'none';
+          document.getElementById('container').style.display = 'block';
+        } else
+        {
+          document.getElementById('loginForm').style.backgroundColor = 'pink';
+          var form = document.getElementById("loginSubmit");
+            form.reset();
+        }
+    }});
+
+    return false;
+}
 
 </script>
 
@@ -89,26 +119,3 @@ function autoResize(id) // Height only...
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
