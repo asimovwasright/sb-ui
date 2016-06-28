@@ -30,9 +30,48 @@
     <li>User: ProtoType</li>
     <li>Venue: The Moon</li>
   </ul>
+  <span id="date_time"></span>
+  <script>
+    window.onload = date_time('date_time');
+    function date_time(id)
+    {
+        date = new Date;
+        year = date.getFullYear();
+        month = date.getMonth();
+        months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
+        d = date.getDate();
+        day = date.getDay();
+        days = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+        h = date.getHours();
+        if(h<10)
+        {
+                h = "0"+h;
+        }
+        m = date.getMinutes();
+        if(m<10)
+        {
+                m = "0"+m;
+        }
+        s = date.getSeconds();
+        if(s<10)
+        {
+                s = "0"+s;
+        }
+        result = ''+days[day]+' '+months[month]+' '+d+' '+year+' '+h+':'+m+':'+s;
+        document.getElementById(id).innerHTML = result;
+        setTimeout('date_time("'+id+'");','1000');
+        return true;
+      }
+  </script>
 </user>
-
 <div class="box" id="frame1">
+  <div class="inbox-half">
+    <iframe scrolling="no" style="height: 100px;" src="/elements/play-light.php" >Loading...</iframe><br />
+    <iframe scrolling="no" style="height: 200px;" src="/elements/stop-button.php" >Loading...</iframe>
+  </div>
+</div>
+
+<div class="box" >
   <div class="inbox-half"><!-- Now PLaying Container -->
     <h1>Now Playing</h1><br/><br/>
 	<iframe scrolling="no" id="trackInfo" src="/elements/now-playing.php" >Loading...</iframe>
@@ -84,13 +123,15 @@
 <!--
 function autoResize(id) // Height only...
 {
-    var newheight;
 
+  setTimeout (function()
+  {
+    var newheight;
     if(document.getElementById){
         newheight = document.getElementById(id).contentWindow.document .body.scrollHeight;
     }
-
     document.getElementById(id).height = (newheight) + "px";
+  },500);
 }
 //-->
 

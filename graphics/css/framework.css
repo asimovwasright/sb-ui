@@ -169,7 +169,8 @@ user {
   top:60px;
   left:0;
   width:100vw;
-  height:25px;
+  height: auto;
+  min-height:25px;
   background: #574538;
   vertical-align: middle;
   text-align: center;
@@ -192,6 +193,13 @@ user ul {
 user ul li {
   display: inline;
   padding: 0px 2vw 0px 3vw;
+}
+
+user span {
+  float: right;
+  margin:5px 0 0 20px;
+  width: 250px;
+  text-align: left;
 }
 
 footer {
@@ -264,26 +272,26 @@ footer table tr td {
 
 #buttonSettings {
   background: url(../images/settings.png) no-repeat center;
-  background-size:35px 35px;
-  background-position: 5px 3px;
+  background-size:25px 25px;
+  background-position: 15px 5px;
 }
 
 	#buttonSettings:hover {
 	  background: url(../images/settings-hover.png) no-repeat center;
-	  background-size:35px 35px;
-	  background-position: 5px 3px;
+    background-size:25px 25px;
+    background-position: 15px 5px;
 	}
 
 #buttonContact {
   background: url(../images/contact.png) no-repeat center;
-  background-size:35px 35px;
-  background-position: 5px 3px;
+  background-size:25px 25px;
+  background-position: 15px 5px;
 }
 
 	#buttonContact:hover {
 	  background: url(../images/contact-hover.png) no-repeat center;
-	  background-size:35px 35px;
-	  background-position: 5px 3px;
+    background-size:25px 25px;
+    background-position: 15px 5px;
 	}
 
 h1 {
