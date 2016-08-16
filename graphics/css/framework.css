@@ -118,9 +118,11 @@ nav {
   position: fixed;
   top:0;
   left:0;
-  width:100vw;
+  width: 100%; /* Fallback */
+  width:100vw; /* Fallback in case calc is not an option */
+  width: calc(100vw - 17px); /* Calc to adjust for scrollbar. */
   height:60px;
-  background: /*rgba(152, 153, 153, .8)*/ black;
+  background: black;
   transition: all .2s ease-in-out;
   -moz-transition: all .2s ease-in-out;
   -webkit-transition: all .2s ease-in-out;
@@ -129,12 +131,14 @@ nav {
   z-index:1000;
 }
 
-
-nav img {
-  margin: 3px 0px 0px 10px;
-  width: 210px;
+#logo {
+  position: absolute;
+  left: 50%;
+  margin-left: -105px; /* Center based on width of img */
+  margin-top: 3px;
 }
 
+/*
 nav ul:first-of-type {
   list-style-type: none;
   padding: 0px 0vw 0px 10vw;
@@ -147,6 +151,10 @@ nav ul:last-of-type {
   padding: 0px 10vw 0px 0vw;
   float: right;
   margin-top: 12px;
+}
+*/
+nav ul {
+  float: right;
 }
 
 nav ul li {
@@ -168,7 +176,9 @@ user {
   position: fixed;
   top:60px;
   left:0;
-  width:100vw;
+  width: 100%; /* Fallback */
+  width:100vw; /* Fallback in case calc is not an option */
+  width: calc(100vw - 17px); /* Calc to adjust for scrollbar. */
   height: auto;
   min-height:25px;
   background: #574538;
@@ -311,6 +321,7 @@ h1 {
   min-width: 300px;
   text-align: center;
   vertical-align:middle;
+  overflow-x: hidden;
 }
 
 
@@ -390,27 +401,6 @@ h1 {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media  only screen and (max-width: 1400px) {
 
 	.box {
@@ -428,54 +418,147 @@ h1 {
 	  padding: 0%;
 	  width:100%
 	}
+
+  nav {
+    height:50px;
+  }
+
+  #logo  {
+    margin: 10px 0px 0px 0px;
+    width: 150px;
+    margin-left: -75px; /* Center based on width of img */
+  }
+
+  user {
+    top:50px;
+  }
+
+  .coolButton { display: none;}
+
+  #hamburger {
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    z-index: 1001;
+    cursor: pointer;
+  }
+
+  #hamburger span {
+    display: block;
+    height: 5px;
+    margin: 5px 0 5px 0;
+    background-color: white;
+    z-index: -1;
+  }
+
+  #menuContainer {
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    height: 90%;
+    overflow-y: auto;
+    background-color: rgba(255,255,255,0.8);
+    z-index: 1100;
+  }
+
+  #menu {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 310px;
+    height: 250px;
+    margin-left: 0px;
+  }
+
+  #menu ul {
+    padding-left: 10px;
+  }
+
+  #menu ul li {
+    background-color: black;
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 15px;
+  }
+
+  #menu #buttonShedule {
+    background: black url(../images/schedule.png) no-repeat center;
+    background-size:35px 35px;
+    background-position: 12px 12px;
+  }
+
+  	#menu #buttonShedule:hover {
+  	  background: black url(../images/schedule-hover.png) no-repeat center;
+  	  background-size:35px 35px;
+  	  background-position: 12px 12px;
+  	}
+
+  #menu #buttonChannel {
+    background: black url(../images/channel.png) no-repeat center;
+    background-size:35px 35px;
+    background-position: 10px 10px;
+  }
+
+  	#menu #buttonChannel:hover {
+  	  background:  black url(../images/channel-hover.png) no-repeat center;
+  	  background-size:35px 35px;
+  	  background-position: 10px 10px;
+  	}
+
+  #menu #buttonSettings {
+    background: black url(../images/settings.png) no-repeat center;
+    background-size:25px 25px;
+    background-position: 15px 15px;
+  }
+
+  	#menu #buttonSettings:hover {
+  	  background: black url(../images/settings-hover.png) no-repeat center;
+      background-size:25px 25px;
+      background-position: 15px 15px;
+  	}
+
+  #menu #buttonContact {
+    background: black url(../images/contact.png) no-repeat center;
+    background-size:25px 25px;
+    background-position: 15px 17px;
+  }
+
+  	#menu #buttonContact:hover {
+  	  background: black url(../images/contact-hover.png) no-repeat center;
+      background-size:25px 25px;
+      background-position: 15px 15px;
+  	}
+
+  #trackInfo {
+    height:950px;
+  }
+
+  #scheduleA, #jingles {
+    width: 125%;
+    overflow-x: auto;
+    -ms-zoom: 0.75;
+    -moz-transform: scale(0.75);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.75);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.75);
+    -webkit-transform-origin: 0 0;
+  }
+
 }
 
 
-@media only screen and (max-width: 800px) {
-
-	nav {
-	  height:50px;
-	}
-
-	nav img {
-	  margin: 10px 0px 0px 10px;
-	  width: 150px;
-	}
-
-	user {
-	  top:50px;
-	}
-
-	.coolButton { display: none;}
-
-	#hamburger {
-	  display: inline-block;
-	  position: absolute;
-	  top: 0px;
-	  left: 0px;
-	  padding: 5px;
-	  width: 50px;
-	  height: 50px;
-	  background-color: black;
-	  z-index: 1001;
-	  cursor: pointer;
-	}
-
-	#hamburger span {
-	  display: block;
-	  height: 5px;
-	  margin: 5px 0 5px 0;
-	  background-color: white;
-	  z-index: -1;
-	}
-
-	#trackInfo {
-	  height:950px;
-	}
-
+@media only screen and (max-width: 1024px) { /* Remove the calc for scroll bar on mobile devices - they don't have 17px scrollbars. */
+  nav, user {
+    width: 100%;
+    width: 100vw;
+  }
 }
-
-
 
 
 /* END of CSS */

@@ -10,19 +10,29 @@
   <title>SilverBox</title>
 </head>
 <body>
+
 <div id="container" style="display: none;">
+  <div id="menuContainer" data-state="hidden" style="display: none;">
+    <div id="menu">
+      <ul>
+        <li id="buttonSettings" class="" onclick="jumpTo('')">Settings</li>
+        <li id="buttonChannel" class="" onclick="jumpTo('channelBox')">Channel</li>
+        <li id="buttonShedule" class="" onclick="jumpTo('scheduleBox')">Schedule</li>
+        <li id="buttonContact" class="" onclick="">SOS</li>
+      </ul>
+    </div>
+  </div>
 <nav>
-  <div id="hamburger">
+  <div id="hamburger" onclick="menu()">
 	<span>&nbsp;</span>
 	<span>&nbsp;</span>
 	<span>&nbsp;</span>
   </div>
+    <img id="logo" onclick="jumpTo('frame1')" src="../images/logo.png" />
   <ul>
-    <li id="buttonSettings" class="coolButton">Settings</li>
-  </ul>
-  <img src="../images/logo.png" />
-  <ul>
-    <li id="buttonShedule" class="coolButton">Schedule</li>
+    <li id="buttonSettings" class="coolButton" onclick="jumpTo('')">Settings</li>
+    <li id="buttonChannel" class="coolButton" onclick="jumpTo('channelBox')">Channel</li>
+    <li id="buttonShedule" class="coolButton" onclick="jumpTo('scheduleBox')">Schedule</li>
   </ul>
 </nav>
 <user>
@@ -71,29 +81,29 @@
   </div>
 </div>
 
-<div class="box" >
+<div class="box" id="nowPlayingBox" >
   <div class="inbox-half"><!-- Now PLaying Container -->
     <h1>Now Playing</h1><br/><br/>
 	<iframe scrolling="no" id="trackInfo" src="/elements/now-playing.php" >Loading...</iframe>
   </div>
-  <div class="inbox-half"><!-- Channel Selector -->
+  <div class="inbox-half" id="channelBox"><!-- Channel Selector -->
     <h1>Channel Override</h1><br/><br/>
 	<iframe scrolling="yes" id="moodDial" src="/elements/channel-box.php" >Loading...</iframe>
   </div>
 </div>
 
 
-<div class="box"><!-- Schedule Box -->
+<div id="scheduleBox" class="box"><!-- Schedule Box -->
   <div class="inbox-full">
 	<h1>Schedule</h1>
-	<iframe scrolling="no" id="scheduleA" src="/elements/schedule.php" onLoad="autoResize('scheduleA');" width="100%">Your computer does not allow iFrames, sorry.</iframe><br /><br />
+	<iframe id="scheduleA" src="/elements/schedule.php" onLoad="autoResize('scheduleA');" width="100%">Loading...</iframe><br /><br />
   </div>
 </div>
 
 <div class="box"><!-- Jingles Box -->
   <div class="inbox-full">
 	<h1>Jingles</h1>
-	<iframe scrolling="no" id="jingles" src="/elements/jingles.php"  onLoad="autoResize('jingles');" width="100%">Your computer does not allow iFrames, sorry.</iframe><br /><br />
+	<iframe id="jingles" src="/elements/jingles.php"  onLoad="autoResize('jingles');" width="100%">Loading...</iframe><br /><br />
   </div>
 </div>
 
@@ -101,9 +111,7 @@
 <footer>
 <table>
  <tr>
-  <td><div id="buttonChannel" class="coolButton">Channel</div></td>
-  <td><div  id="buttonContact" class="coolButton" >Contact</div></td>
-  <td></td>
+  <td><div  id="buttonContact" class="coolButton" >SOS?</div></td>
  </tr>
 </table>
 </footer>
@@ -135,10 +143,19 @@ function autoResize(id) // Height only...
 }
 //-->
 
-</script>
-<script>
-function loginNow() {
-    $.ajax({type:'POST', url: '../../elements/chk.php', data:$('#loginSubmit').serialize(), success: function(response) {
+function jumpTo(place)
+{
+      $('html, body').animate({
+          scrollTop: ($("#"+place).offset().top) -100
+      }, 500);
+      menu();
+}
+
+
+function loginNow()
+{
+    $.ajax({type:'POST', url: '../../elements/chk.php', data:$('#loginSubmit').serialize(), success: function(response)
+    {
         if (response == "ok")
         {
           document.getElementById('secureLock').style.display = 'none';
@@ -154,7 +171,36 @@ function loginNow() {
     return false;
 }
 
+function menu()
+{
+  // Do nothing unless mobile media queries are enguaged.
+  if ($(document).width() <= 1386)
+  {
+    // Check of the menu is in or out, and adjust accordingly.
+    var $menu = $('#menuContainer');
+    var state = $menu.data('state');
+    if (state == 'visible')
+    {
+      // Menu is out, bring it in.
+      $menu.hide();
+      $menu.data('state','hidden');
+    }
+    else
+    {
+      // Menu is in, bring it out.
+      $menu.show();
+      $menu.data('state','visible');
+    }
+  }
+  else
+  {
+    return false;
+  }
+
+}
+
 </script>
+
 
 
 
