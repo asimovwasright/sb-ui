@@ -399,6 +399,47 @@ h1 {
   min-height:550px;
 }
 
+.popup {
+  position: fixed;
+  top: 50px; /* Fallback */
+  left: 50px; /* Fallback */
+  top: calc(50% - 100px);
+  left: calc(50% - 125px);
+  width: 250px;
+  min-height: 200px;
+  height: auto;
+  max-height: 270px;
+  overflow-y: auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #F5712F inset;
+  padding: 10px;
+  text-align:center;
+}
+
+.popup h2, .popup span {
+  color: #616161;
+}
+
+.sosButton {
+  display: inline-block;
+  cursor: pointer;
+  margin: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  line-height: 50px;
+}
+
+  .sosButton.red {
+    box-shadow: 0 0 15px red inset;
+    color: red;
+  }
+
+  .sosButton.green {
+    box-shadow: 0 0 15px green inset;
+    color: green;
+  }
 
 
 @media  only screen and (max-width: 1400px) {

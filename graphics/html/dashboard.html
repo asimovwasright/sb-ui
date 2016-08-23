@@ -18,7 +18,7 @@
         <li id="buttonSettings" class="" onclick="jumpTo('')">Settings</li>
         <li id="buttonChannel" class="" onclick="jumpTo('channelBox')">Channel</li>
         <li id="buttonShedule" class="" onclick="jumpTo('scheduleBox')">Schedule</li>
-        <li id="buttonContact" class="" onclick="">SOS</li>
+        <li id="buttonContact" class="" onclick="sos()">SOS</li>
       </ul>
     </div>
   </div>
@@ -111,7 +111,7 @@
 <footer>
 <table>
  <tr>
-  <td><div  id="buttonContact" class="coolButton" >SOS?</div></td>
+  <td><div  id="buttonContact" class="coolButton" onclick="sos()">SOS?</div></td>
  </tr>
 </table>
 </footer>
@@ -199,6 +199,29 @@ function menu()
 
 }
 
+function sos(pos)
+{
+  if (!pos)
+  {
+    // When toggled with no arg, this function should bring a popup to send instant sos signal
+    $('body').append('<div id="sosPopup" class="popup"><h2>SOS</h2><span>Do you want to send an SOS signal to your support team now?</span><br /><div onclick="sos(\'send\')" class="sosButton green">Yes</div><div onclick="sos(\'cancel\')" class="sosButton red">No</div></div>');
+    menu();
+  }
+  else if (pos == "send")
+  {
+    // AJAX to sos.php and await the response to decide what feedback to give.
+    $('#sosPopup').html('<h2>Sending!</h2><span><img src="../images/loading.gif" /></span>');
+    $.ajax({url: "../../elements/sos.php", success: function(result)
+    {
+        $("#sosPopup").html(result+'<br /><div onclick="sos(\'cancel\')" class="sosButton green">OK</div>');
+    }});
+  }
+  else // Will either be cancel or a mistake, either way, close the popup.
+  {
+    $('#sosPopup').remove();
+  }
+
+}
 </script>
 
 
