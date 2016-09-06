@@ -15,7 +15,7 @@
   <div id="menuContainer" data-state="hidden" style="display: none;">
     <div id="menu">
       <ul>
-        <li id="buttonSettings" class="" onclick="jumpTo('')">Settings</li>
+        <li id="buttonSettings" class="" onclick="jumpTo('settingsBox')">Settings</li>
         <li id="buttonChannel" class="" onclick="jumpTo('channelBox')">Channel</li>
         <li id="buttonShedule" class="" onclick="jumpTo('scheduleBox')">Schedule</li>
         <li id="buttonContact" class="" onclick="sos()">SOS</li>
@@ -30,7 +30,7 @@
   </div>
     <img id="logo" onclick="jumpTo('frame1')" src="../images/logo.png" />
   <ul>
-    <li id="buttonSettings" class="coolButton" onclick="jumpTo('')">Settings</li>
+    <li id="buttonSettings" class="coolButton" onclick="jumpTo('settingsBox')">Settings</li>
     <li id="buttonChannel" class="coolButton" onclick="jumpTo('channelBox')">Channel</li>
     <li id="buttonShedule" class="coolButton" onclick="jumpTo('scheduleBox')">Schedule</li>
   </ul>
@@ -104,6 +104,33 @@
   <div class="inbox-full">
 	<h1>Jingles</h1>
 	<iframe id="jingles" src="/elements/jingles.php"  onLoad="autoResize('jingles');" width="100%">Loading...</iframe><br /><br />
+  </div>
+</div>
+
+<div id="settingsBox" class="box"><!-- Settings Box -->
+  <div class="inbox-full">
+	<h1>Settings</h1>
+  <p><i>Update your user info here.</i></p>
+	<form method="post" onsubmit="return settings();" id="settingsForm">
+    <fieldset style="display: inline-block">
+      <legend>Main Contact Information</legend>
+      <label for="User">New Username:</label>
+      <input type="text" autocomplete="off" id="User"></input><br /><br />
+      <label for="Venue">New Venue Name:</label>
+      <input type="text" autocomplete="off" id="Venue"></input><br /><br />
+      <label for="Phone">Contact Phone Number:</label>
+      <input type="text" autocomplete="off" id="Phone"></input><br /><br />
+    </fieldset><br /><br />
+    <fieldset style="display: inline-block">
+      <legend>Change PIN Code</legend>
+      <label for="PassNew">New Pin Code:</label>
+      <input type="password" pattern="[0-9]{4}" id="PassNew" placeholder="4 Digits Only!"></input><br /><br />
+      <label for="PassOld">Old Pin Code:</label>
+      <input type="password" id="PassOld"></input><br /><br />
+    </fieldset><br /><br />
+    <button type="submit">Submit Changes</button><br /><br />
+    <div id="settingsBoxResult"></div>
+  </form>
   </div>
 </div>
 
@@ -221,6 +248,22 @@ function sos(pos)
     $('#sosPopup').remove();
   }
 
+}
+
+function settings()
+{
+  var newName = $('#settingsForm #User').val();
+  var newVenue = $('#settingsForm #Venue').val();
+  var newPhone = $('#settingsForm #Phone').val();
+  var PassNew = $('#settingsForm #PassNew').val();
+  var PassOld = $('#settingsForm #PassOld').val();
+  // AJAX to settings.php and await the response to decide what feedback to give.
+  $('#settingsBoxResult').html('<h2>Saving Info...</h2><span><img src="../images/loading-dark.gif" /></span>');
+  $.ajax({url: "../../elements/settings.php?name="+newName+"&venue="+newVenue+"&phone="+newPhone+"&passNew="+PassNew+"&passOld="+PassOld, success: function(result)
+  {
+      $("#settingsBoxResult").html(result);
+  }});
+    return false;
 }
 </script>
 

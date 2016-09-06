@@ -208,7 +208,7 @@ user ul li {
 user span {
   float: right;
   margin:5px 0 0 20px;
-  width: 250px;
+  width: 300px;
   text-align: left;
 }
 
@@ -391,6 +391,44 @@ h1 {
 	  border: 2px solid #F5712F;
 	  color: #F5712F;
 	}
+
+#settingsForm {
+  padding: 25px 15px 50px 15px;
+}
+
+#settingsForm input {
+  background-color: transparent;
+  border: thin solid white;
+  outline: none;
+  padding: 10px 25px;
+}
+
+#settingsForm button {
+  border: 2px solid green;
+  border-radius: 15px;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  padding: 25px;
+}
+
+#settingsForm label {
+  display: inline-block;
+  width: 200px;
+  margin-right: 15px;
+  text-align: right;
+}
+
+legend {
+  padding: 5px;
+  text-align: left;
+  margin-left: 15px;
+}
+
+#settingsBoxResult {
+  height: auto;
+  min-height: 100px;
+}
 
 #moodDial {
   width: 100%;
